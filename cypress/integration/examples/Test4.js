@@ -1,7 +1,7 @@
 /// <reference types = "Cypress" />
 ///node_modules/.bin/cypress open
-describe("My third test suite", function() {
-it("My third test case", function(){
+describe("My fourth test suite", function() {
+it("My fourth test case", function(){
     cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
     cy.get('#alertbtn').click()
     cy.get('input[value="Confirm"').click()
@@ -18,7 +18,7 @@ it("My third test case", function(){
     })
     //DOM manipulation
     cy.get('#opentab').invoke('removeAttr', 'target').click()
-    cy.url().should('include', 'https://www.rahulshettyacademy.com/')
+    cy.url().should('include', 'www.rahulshettyacademy.com/')
     //navigating
     cy.go('back')
 
