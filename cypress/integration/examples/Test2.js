@@ -2,7 +2,7 @@
 ///node_modules/.bin/cypress open
 describe("My second test suite", function() {
 it("My second test case", function(){
-    cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/")
+    cy.visit(Cypress.env('url')+'/seleniumPractise/#/')
     cy.get('.search-keyword').type('ca')
     cy.wait(1000)
     cy.get('.products').as('productLocator')

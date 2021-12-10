@@ -1,6 +1,6 @@
 /// <reference types = "Cypress" />
-import HomePage from '../pageObjects/HomePage'
-import ProductPage from '../pageObjects/ProductPage'
+import HomePage from '../../support/pageObjects/HomePage'
+import ProductPage from '../../support/pageObjects/ProductPage'
 
 describe("Framework practice", function() {
     before(function(){
@@ -12,7 +12,7 @@ describe("Framework practice", function() {
 it("Purchase products", function(){
     const homePage = new HomePage()
     const productPage = new ProductPage()
-    cy.visit('https://rahulshettyacademy.com/angularpractice')
+    cy.visit(Cypress.env('url')+'/angularpractice')
     homePage.getEditBox().type(this.data.name)
     homePage.getGender().select(this.data.gender)
 

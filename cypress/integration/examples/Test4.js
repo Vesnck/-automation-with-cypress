@@ -1,8 +1,8 @@
 /// <reference types = "Cypress" />
-///node_modules/.bin/cypress open
+
 describe("My fourth test suite", function() {
 it("My fourth test case", function(){
-    cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+    cy.visit(Cypress.env('url')+'/AutomationPractice/')
     cy.get('#alertbtn').click()
     cy.get('input[value="Confirm"').click()
     cy.on('window:alert', (str)=>
