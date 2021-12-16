@@ -1,4 +1,4 @@
-describe("Mock request testing", function()
+describe("Mock response testing", function()
 {
     it("Response mocking", function(){
         cy.visit("https://rahulshettyacademy.com/angularAppdemo/")
@@ -17,8 +17,12 @@ describe("Mock request testing", function()
                 }]
             }).as('bookRetrieve')
         cy.get("button[class = 'btn btn-primary']").click()
-        cy.wait('@bookRetrieve')
+        cy.wait('@bookRetrieve').should(({request,response})=>{
+            cy.get('tr').should('have.length', response.body.length+1)
+        })
+        cy.get('p').should('have.text','Oops only 1 Book available')
 
-    })
+    })  
+
 }
 )
